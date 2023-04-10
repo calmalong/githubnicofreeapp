@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Hello</string>
+    <string name="strTxt1">니코틴 의존도 평가를 위해 다음 질문에 답해주세요.</string>
+    <string name="strTxt2">1.아침에 일어나서 얼마 만에 첫 담배를 피우십니까?</string>
+    <string name="strTxt3">2.지하철, 버스, 병원, 영화관 등과 같은 금연구역에서 흡연 욕구를 참는 것이 어렵나요?</string>
+    <string name="strTxt4">3.가장 포기하기 싫은 담배, 다시 말해 가장 좋아하는 담배는 어떤 것 입니까?</string>
+    <string name="strTxt5">4. 하루에 담배를 몇 개비나 피우십니까?</string>
+    <string name="strTxt6">5. 깨어나서 처음 몇 시간 피우는 흡연량이 하루의 다른 때보다 더 많습니까?</string>
+    <string name="strTxt7">6. 아파서 거의 하루 종일 누워있거나, 감기나 독감에 걸려 호흡이 곤란할 때에도 담배를 피우십니까?</string>
+
+</resources>
