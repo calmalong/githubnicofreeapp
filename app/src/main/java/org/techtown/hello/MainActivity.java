@@ -1,7 +1,6 @@
 package org.techtown.hello;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +12,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView text1, text2, text3, text4, text5, text6, text7;
-    RadioGroup rGroup1, rGroup2, rGroup3, rGroup4, rGroup5, rGroup6, rGroup7;
+    TextView text1, text2, text3, text4, text5, text6, text7, finalScore;
+    RadioGroup rGroup1, rGroup2, rGroup3, rGroup4, rGroup5, rGroup6;
     RadioButton r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16;
-    Button btnSub;
+    Button btnResult;
 
+    int score = 0;
+    int score1 = 0;
+    int score2 = 0;
+    int score3 = 0;
+    int score4 = 0;
+    int score5 = 0;
+    int score6 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,16 +66,70 @@ public class MainActivity extends AppCompatActivity {
         r15 = (RadioButton) findViewById(R.id.R15);
         r16 = (RadioButton) findViewById(R.id.R16);
 
-        btnSub = (Button) findViewById(R.id.button1);
+        btnResult = (Button) findViewById(R.id.btnResult);
+        finalScore = (TextView) findViewById(R.id.textFinalScore);
 
-        btnSub.setOnClickListener(new View.OnClickListener() {
+        btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
-                startActivity(mIntent);
 
+                Intent intent = new Intent(getApplicationContext(), EvaluationvalueActivity.class);
+                if (r1.isChecked()) {
+                    score1 = 3;
+                } else if (r2.isChecked()) {
+                    score1 = 2;
+                } else if (r3.isChecked()) {
+                    score1 = 1;
+                } else {
+                    score1 = 0;
+                }
+
+                if (r5.isChecked()) {
+                    score2 = 1;
+                } else {
+                    score2 = 0;
+                }
+
+                if (r7.isChecked()) {
+                    score3 = 1;
+                } else {
+                    score3 = 0;
+                }
+
+                if (r9.isChecked()) {
+                    score4 = 0;
+                } else if (r10.isChecked()) {
+                    score4 = 1;
+                } else if (r11.isChecked()) {
+                    score4 = 2;
+                } else {
+                    score4 = 3;
+                }
+
+                if (r13.isChecked()) {
+                    score5 = 1;
+                } else {
+                    score5 = 0;
+                }
+
+                if (r15.isChecked()) {
+                    score6 = 1;
+                } else {
+                    score6 = 0;
+                }
+
+                score = score1 + score2 + score3 + score4 + score5 + score6;
+
+
+                String thescore = String.valueOf(score);
+                Intent myIntent = new Intent(MainActivity.this, EvaluationvalueActivity.class);
+                myIntent.putExtra("score", thescore);
+
+                startActivity(intent);
+                startActivity(myIntent);
             }
         });
+
 
     }
 }

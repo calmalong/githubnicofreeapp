@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:hint="평가점수"
+        android:textColor="#000000"
+        android:id="@+id/textFinalScore"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:hint="피드백 내용\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        android:textColor="#000000"
+        android:id="@+id/testresult"/>
+
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGather"
+        android:layout_gravity="center"
+        android:text="흡연 정보 수집 페이지로"/>
+
+
+
+</LinearLayout>
