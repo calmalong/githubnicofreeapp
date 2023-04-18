@@ -25,9 +25,10 @@ public class EvaluationvalueActivity extends Activity {
 
 
         Bundle bundle = getIntent().getExtras();
-        String text1 = bundle.getString("score");
+        int score = bundle.getInt("score");
 
-        textFinalScore.setText("당신의 니코틴의존도는 " + text1 +"점 입니다.");
+
+        textFinalScore.setText("당신의 니코틴의존도는 " + score +"점 입니다.");
 
 
 

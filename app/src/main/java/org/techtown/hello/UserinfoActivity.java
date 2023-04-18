@@ -14,9 +14,10 @@ import androidx.annotation.Nullable;
 
 public class UserinfoActivity extends Activity {
 
-    TextView text1, text2, text3, text4, text5, text6, text7, text8, finalScore;
-    RadioGroup rGroup1, rGroup2, rGroup3, rGroup4, rGroup5, rGroup6, rGroup7;
-    RadioButton r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31, r32, r33, r34, r35;
+    TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text10, text11, finalScore;
+    RadioGroup rGroup1, rGroup2, rGroup3, rGroup4, rGroup5, rGroup6, rGroup7, rGroup8, rGroup9, rGroup10;
+    RadioButton r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25,
+            r26, r27, r28, r29, r30, r31, r32, r33, r34, r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50;
 
     Button btnNextpage;
 
@@ -28,6 +29,12 @@ public class UserinfoActivity extends Activity {
     int score5 = 0;
     int score6 = 0;
     int score7 = 0;
+
+    int score8 = 0;
+
+    int score9 = 0;
+
+    int score10 = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,6 +99,30 @@ public class UserinfoActivity extends Activity {
         r33 = (RadioButton) findViewById(R.id.R33);
         r34 = (RadioButton) findViewById(R.id.R34);
         r35 = (RadioButton) findViewById(R.id.R35);
+
+        text9 = (TextView) findViewById(R.id.text9);
+        rGroup8 = (RadioGroup) findViewById(R.id.RGroup8);
+        r36 = (RadioButton) findViewById(R.id.R36);
+        r37 = (RadioButton) findViewById(R.id.R37);
+        r38 = (RadioButton) findViewById(R.id.R38);
+        r39 = (RadioButton) findViewById(R.id.R39);
+        r40 = (RadioButton) findViewById(R.id.R40);
+
+        text10 = (TextView) findViewById(R.id.text10);
+        rGroup9 = (RadioGroup) findViewById(R.id.RGroup9);
+        r41 = (RadioButton) findViewById(R.id.R41);
+        r42 = (RadioButton) findViewById(R.id.R42);
+        r43 = (RadioButton) findViewById(R.id.R43);
+        r44 = (RadioButton) findViewById(R.id.R44);
+        r45 = (RadioButton) findViewById(R.id.R45);
+
+        text11 = (TextView) findViewById(R.id.text11);
+        rGroup10 = (RadioGroup) findViewById(R.id.RGroup10);
+        r46 = (RadioButton) findViewById(R.id.R46);
+        r47 = (RadioButton) findViewById(R.id.R47);
+        r48 = (RadioButton) findViewById(R.id.R48);
+        r49 = (RadioButton) findViewById(R.id.R49);
+        r50 = (RadioButton) findViewById(R.id.R50);
 
 
         btnNextpage = (Button) findViewById(R.id.btnNextpage);
@@ -176,19 +207,55 @@ public class UserinfoActivity extends Activity {
                 }
 
                 if (r31.isChecked()) {
-                    score7 = 1;
+                    score7 = 5;
                 } else if (r32.isChecked()){
-                    score7 = 2;
+                    score7 = 4;
                 } else if (r33.isChecked()) {
                     score7 = 3;
                 } else if (r34.isChecked()) {
-                    score7 = 4;
+                    score7 = 2;
                 } else {
-                    score7 = 5;
+                    score7 = 1;
+                }
+
+                if (r36.isChecked()) {
+                    score8 = 5;
+                } else if (r37.isChecked()){
+                    score8 = 4;
+                } else if (r38.isChecked()) {
+                    score8 = 3;
+                } else if (r39.isChecked()) {
+                    score8 = 2;
+                } else {
+                    score8 = 1;
+                }
+
+                if (r41.isChecked()) {
+                    score9 = 1;
+                } else if (r42.isChecked()){
+                    score9 = 2;
+                } else if (r43.isChecked()) {
+                    score9 = 3;
+                } else if (r44.isChecked()) {
+                    score9 = 4;
+                } else {
+                    score9 = 5;
+                }
+
+                if (r46.isChecked()) {
+                    score10 = 5;
+                } else if (r47.isChecked()){
+                    score10 = 4;
+                } else if (r48.isChecked()) {
+                    score10 = 3;
+                } else if (r49.isChecked()) {
+                    score10 = 2;
+                } else {
+                    score10 = 1;
                 }
 
 
-                score = score1 + score2 + score3 + score4 + score5 + score6 + score7;
+                score = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9 + score10;
 
                 Toast.makeText(getApplicationContext(), "당신의 점수는: " + score + "/35", Toast.LENGTH_LONG).show();
 

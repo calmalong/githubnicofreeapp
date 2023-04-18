@@ -121,9 +121,9 @@ public class MainActivity extends AppCompatActivity {
                 score = score1 + score2 + score3 + score4 + score5 + score6;
 
 
-                String thescore = String.valueOf(score);
+
                 Intent myIntent = new Intent(MainActivity.this, EvaluationvalueActivity.class);
-                myIntent.putExtra("score", thescore);
+                myIntent.putExtra("score", score);
 
                 startActivity(intent);
                 startActivity(myIntent);
