@@ -5,27 +5,248 @@
     android:layout_height="match_parent"
     android:padding="15dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/strTxt41"
-        android:textColor="#28634F"
-        android:textSize="20sp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/strTxt42"
-        android:textColor="@color/black"
-        android:textSize="17sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/btnAnalyze"
-        android:text="흡연 정보 작성 완료"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/strTxt41"
+                android:textColor="#28634F"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt42"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/edtunxt42"
+                android:hint="( )갑 ( )개비" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt43"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/edtunxt43"
+                android:hint="( )년 ( )개월" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt44"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <RadioGroup
+                android:id="@+id/RGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/R1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기상 직후" />
+
+                <RadioButton
+                    android:id="@+id/R2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="점심 전후" />
+
+                <RadioButton
+                    android:id="@+id/R3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="저녁 전후" />
+
+                <RadioButton
+                    android:id="@+id/R4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/strTxt45"
+                android:textColor="#28634F"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt46"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/edtunxt46"
+                android:hint="총 ( )회" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt47"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <RadioGroup
+                android:id="@+id/RGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/R5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="약물사용" />
+
+                <RadioButton
+                    android:id="@+id/R6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="보조도구" />
+
+                <RadioButton
+                    android:id="@+id/R7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전문가상담" />
+
+                <RadioButton
+                    android:id="@+id/R8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="도움없이시도" />
+
+                <RadioButton
+                    android:id="@+id/R9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt48"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/edtunxt48"
+                android:hint="금연 성공 혹은 실패 이유" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt49"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <RadioGroup
+                android:id="@+id/RGroup3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/R10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/R11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아니오" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/strTxt50"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <RadioGroup
+                android:id="@+id/RGroup4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/R12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/R13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아니오" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/strTxt51"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/edtunxt51"
+                android:hint="파이팅!" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/btnAnalyze"
+                android:text="흡연 정보 작성 완료"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

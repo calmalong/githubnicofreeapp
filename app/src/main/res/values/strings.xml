@@ -8,6 +8,8 @@
     <string name="strTxt6">5.깨어나서 처음 몇 시간 피우는 흡연량이 하루의 다른 때보다 더 많습니까?</string>
     <string name="strTxt7">6.아파서 거의 하루 종일 누워있거나, 감기나 독감에 걸려 호흡이 곤란할 때에도 담배를 피우십니까?</string>
 
+    <string name="strTxt8"> 금연 도움을 위해 흡연 정보를 입력해주세요. </string>
+
     <string name="strTxt11">흡연 정보 수집을 위한 질문입니다. \n [매우그렇지않다: 1, 대체로그렇지않다: 2,\n 보통이다: 3, 대체로그렇다: 4, 매우그렇다: 5 ]를 기준으로 선택하세요. </string>
     <string name="strTxt12">1.담배가 나에게 미치는 영향에 대해 생각해 보았다.</string>
     <string name="strTxt13">2.나는 금연의 긍정적 효과가 흡연보다 훨씬 크다는 것을 알고 있다.</string>
@@ -20,7 +22,19 @@
     <string name="strTxt20">9.나는 흡연 문제로 인해 여러 가지 불편함을 느낀다.</string>
     <string name="strTxt21">10.나는 담배를 끊고 싶지 않다.</string>
 
-    <string name="strTxt41">흡연 정보 수집을 위한 질문에 답을 작성하세요.</string>
-    <string name="strTxt42">흡연량</string>
+    <string name="strTxt41">흡연 정보 수집을 위해 질문에 답해주세요.</string>
+
+    <string name="strTxt42">1.평소 일주일 흡연량은 어떻게 되나요?</string>
+    <string name="strTxt43">2.흡연 기간은 어떻게 되시나요?</string>
+    <string name="strTxt44">3.주로 언제 흡연을 하시나요?</string>
+
+    <string name="strTxt45">다음은 금연 경력에 관한 설문입니다.</string>
+    <string name="strTxt46">4.몇 번의 금연시도를 해오셨나요?</string>
+    <string name="strTxt47">5.어떤 금연 방법을 채택하셨나요?</string>
+    <string name="strTxt48">6.금연 성공 혹은 실패 이유는 무엇이라고 생각하시나요?</string>
+    <string name="strTxt49">7.금연 시도에 따른 신체적, 심리적 금단 증상이 있었나요?</string>
+    <string name="strTxt50">8.주변에서 금연을 권장하거나 금연 소식을 알고 있었나요?</string>
+
+    <string name="strTxt51">수고하셨습니다. 간단하게 스스로에게 이번 금연에 대한 태도나 각오를 적어주세요!</string>
 
 </resources>
