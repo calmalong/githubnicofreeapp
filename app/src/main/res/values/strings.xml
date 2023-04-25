@@ -31,10 +31,17 @@
     <string name="strTxt45">다음은 금연 경력에 관한 설문입니다.</string>
     <string name="strTxt46">4.몇 번의 금연시도를 해오셨나요?</string>
     <string name="strTxt47">5.어떤 금연 방법을 채택하셨나요?</string>
-    <string name="strTxt48">6.금연 성공 혹은 실패 이유는 무엇이라고 생각하시나요?</string>
-    <string name="strTxt49">7.금연 시도에 따른 신체적, 심리적 금단 증상이 있었나요?</string>
-    <string name="strTxt50">8.주변에서 금연을 권장하거나 금연 소식을 알고 있었나요?</string>
+    <string name="strTxt48">6.금연 실패 이유는 무엇이라고 생각하시나요?</string>
+    <string name="strTxt49">7.금연 중이라면 기간은 얼마나 되었나요?</string>
+    <string name="strTxt50">8.금연 시도에 따른 신체적, 심리적 금단 증상이 있었나요?</string>
+    <string name="strTxt51">9.주변에서 금연을 권장하거나 금연 소식을 알고 있었나요?</string>
+    <string name="strTxt52">수고하셨습니다. 금연에 대한 태도나 각오를 적어주세요!</string>
 
-    <string name="strTxt51">수고하셨습니다. 간단하게 스스로에게 이번 금연에 대한 태도나 각오를 적어주세요!</string>
+    <string name="strTxt71">금연 계획서</string>
+    <string name="strTxt72">금연 시작일 정하기 \n(생일, 기념일 등을 시작일로 정해 금연 동기 부여해요.)</string>
+    <string name="strTxt73">주변에 금연 소식을 알리기 \n(가까운 사람에게 금연 사실을 알려요.)</string>
+    <string name="strTxt74">금연 환경 조성하기 \n(담배, 재떨이 등 흡연과 관련된 모든 소지품을 없애요.)</string>
+    <string name="strTxt75">흡연 유발 요인 피하기 \n(특히 재발의 흔한 원인인 술자리를 피해요.)</string>
+    <string name="strTxt76">금연보조제 활용하기 \n(금연보조제 활용은 성공률을 2배 향상시켜요.)</string>
 
 </resources>

@@ -168,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/edtunxt48"
-                android:hint="금연 성공 혹은 실패 이유" />
+                android:hint="금연 실패 이유" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -188,14 +188,16 @@
                     android:id="@+id/R10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="예" />
+                    android:text="6개월 미만" />
 
                 <RadioButton
                     android:id="@+id/R11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="아니오" />
+                    android:text="6개월 이상" />
             </RadioGroup>
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -227,8 +229,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/strTxt51"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <RadioGroup
+                android:id="@+id/RGroup5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/R14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/R15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아니오" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/strTxt52"
                 android:textColor="@color/black"
                 android:textSize="17sp"/>
 
