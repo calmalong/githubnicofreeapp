@@ -38,10 +38,10 @@
     <string name="strTxt52">수고하셨습니다. 금연에 대한 태도나 각오를 적어주세요!</string>
 
     <string name="strTxt71">금연 계획서</string>
-    <string name="strTxt72">금연 시작일 정하기 \n(생일, 기념일 등을 시작일로 정해 금연 동기 부여해요.)</string>
-    <string name="strTxt73">주변에 금연 소식을 알리기 \n(가까운 사람에게 금연 사실을 알려요.)</string>
-    <string name="strTxt74">금연 환경 조성하기 \n(담배, 재떨이 등 흡연과 관련된 모든 소지품을 없애요.)</string>
-    <string name="strTxt75">흡연 유발 요인 피하기 \n(특히 재발의 흔한 원인인 술자리를 피해요.)</string>
-    <string name="strTxt76">금연보조제 활용하기 \n(금연보조제 활용은 성공률을 2배 향상시켜요.)</string>
+    <string name="strTxt72">1단계 금연 시작일 정하기 \n(생일, 기념일 등을 시작일로 정해 금연 동기 부여해요.)</string>
+    <string name="strTxt73">2단계 주변에 금연 소식을 알리기 </string>
+    <string name="strTxt74">3단계 금연 환경 조성하기 \n(담배, 재떨이 등 흡연과 관련된 모든 소지품을 없애요.)</string>
+    <string name="strTxt75">4단계 흡연 유발 요인 피하기 \n(특히 재발의 흔한 원인인 술자리를 피해요.)</string>
+    <string name="strTxt76">5단계 금연보조제 활용하기 \n(금연보조제 활용은 성공률을 2배 향상시켜요.)</string>
 
 </resources>

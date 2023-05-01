@@ -3,135 +3,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/strTxt71"
-            android:textColor="#28634F"
-            android:textSize="20sp"></TextView>
-    </LinearLayout>
+    android:padding="10dp">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/strTxt72"
-            android:textColor="@color/black"
-            android:textSize="17sp"/>
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/rdoDate"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/strTxt71"
+                android:textColor="#28634F"
+                android:textSize="20sp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="시작일 선택" />
-            </RadioGroup>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/strTxt72"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/rdoDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시작일 선택" />
+                </RadioGroup>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <DatePicker
+                        android:id="@+id/dPicker"
+                        android:datePickerMode="spinner"
+                        android:calendarViewShown="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </FrameLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:id="@+id/btnDate"
+                    android:text="선택완료"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/startdate"
+                android:textSize="15sp"
+                android:hint="선택일"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/strTxt73"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/strTxt74"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/strTxt75"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/strTxt76"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
             <Button
+                android:id="@+id/btnRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:id="@+id/btnDate"
-                android:text="선택완료"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tvYear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="0000"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:id="@+id/text2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="년"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:id="@+id/tvMonth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="00"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:id="@+id/text3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="월"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:id="@+id/tvDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="00"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:id="@+id/text4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="일"
-                    android:textSize="20sp"></TextView>
-            </LinearLayout>
+                android:text="금연일지우선여기에"/>
         </LinearLayout>
 
-        <DatePicker
-            android:datePickerMode="spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/dPicker"/>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/strTxt73"
-            android:textColor="@color/black"
-            android:textSize="17sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/strTxt74"
-            android:textColor="@color/black"
-            android:textSize="17sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/strTxt75"
-            android:textColor="@color/black"
-            android:textSize="17sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/strTxt76"
-            android:textColor="@color/black"
-            android:textSize="17sp"/>
-
-    </LinearLayout>
+    </ScrollView>
 
 
 

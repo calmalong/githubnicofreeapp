@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     score4 = 1;
                 } else if (r11.isChecked()) {
                     score4 = 2;
-                } else {
+                } else if (r12.isChecked()) {
                     score4 = 3;
                 }
 

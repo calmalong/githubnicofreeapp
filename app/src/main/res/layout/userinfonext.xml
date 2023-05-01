@@ -273,7 +273,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:id="@+id/btnAnalyze"
-                android:text="흡연 정보 작성 완료"/>
+                android:text="흡연 정보 작성 완료 및 금연 계획세우기"/>
+
+
 
         </LinearLayout>
     </ScrollView>

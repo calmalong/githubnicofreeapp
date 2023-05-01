@@ -1,6 +1,7 @@
 package org.techtown.hello;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,52 +13,51 @@ import androidx.annotation.Nullable;
 
 public class PlanActivity extends Activity {
 
-    Button btnDate;
+    Button btnDate, btnRecord;
     RadioButton rdoDate;
     DatePicker dPicker;
-    TextView tvYear, tvMonth, tvDay;
-    int selectYear, selectMonth, selectDate;
+    TextView startdate;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan);
 
-        btnDate = (Button) findViewById(R.id.btnDate);
-
         rdoDate = (RadioButton) findViewById(R.id.rdoDate);
 
-        dPicker =  (DatePicker) findViewById(R.id.dPicker);
+        btnDate = (Button) findViewById(R.id.btnDate);
+        btnRecord = (Button) findViewById(R.id.btnRecord);
 
-        tvYear = (TextView) findViewById(R.id.tvYear);
-        tvMonth = (TextView) findViewById(R.id.tvMonth);
-        tvDay = (TextView) findViewById(R.id.tvDay);
+        dPicker = (DatePicker) findViewById(R.id.dPicker);
 
         dPicker.setVisibility(View.INVISIBLE);
+        btnDate.setVisibility(View.INVISIBLE);
 
-        dPicker.setOnClickListener(new View.OnClickListener() {
+        rdoDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dPicker.setVisibility(View.VISIBLE);
+                btnDate.setVisibility(View.VISIBLE);
             }
         });
 
-        dPicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
-            @Override
-            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                selectYear = year;
-                selectMonth = monthOfYear+1;
-                selectDate = dayOfMonth;
-            }
-        });
 
         btnDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startdate.setText(dPicker.getYear() + "년" + dPicker.getMonth() + 1 + "월" + dPicker.getDayOfMonth() + "일");
                 dPicker.setVisibility(View.INVISIBLE);
-                tvYear.setText(Integer.toString(selectYear));
-                tvMonth.setText(Integer.toString(selectMonth));
-                tvDay.setText(Integer.toString(selectDate));}
+                btnDate.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        btnRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ViewrecordActivity.class);
+                startActivity(intent);
+
+            }
         });
     }
 

@@ -142,7 +142,7 @@ public class UserinfoActivity extends Activity {
                     score1 = 3;
                 } else if (r4.isChecked()) {
                     score1 = 4;
-                } else {
+                } else if (r5.isChecked()) {
                     score1 = 5;
                 }
 
@@ -154,7 +154,7 @@ public class UserinfoActivity extends Activity {
                     score2 = 3;
                 } else if (r9.isChecked()) {
                     score2 = 4;
-                } else {
+                } else if (r10.isChecked()) {
                     score2 = 5;
                 }
 
@@ -166,7 +166,7 @@ public class UserinfoActivity extends Activity {
                     score3 = 3;
                 } else if (r14.isChecked()) {
                     score3 = 4;
-                } else {
+                } else if (r15.isChecked()){
                     score3 = 5;
                 }
 
@@ -178,7 +178,7 @@ public class UserinfoActivity extends Activity {
                     score4 = 3;
                 } else if (r19.isChecked()) {
                     score4 = 4;
-                } else {
+                } else if (r20.isChecked()) {
                     score4 = 5;
                 }
 
@@ -190,7 +190,7 @@ public class UserinfoActivity extends Activity {
                     score5 = 3;
                 } else if (r24.isChecked()) {
                     score5 = 4;
-                } else {
+                } else if (r25.isChecked()) {
                     score5 = 5;
                 }
 
@@ -202,7 +202,7 @@ public class UserinfoActivity extends Activity {
                     score6 = 3;
                 } else if (r29.isChecked()) {
                     score6 = 4;
-                } else {
+                } else if (r30.isChecked()){
                     score6 = 5;
                 }
 
@@ -214,7 +214,7 @@ public class UserinfoActivity extends Activity {
                     score7 = 3;
                 } else if (r34.isChecked()) {
                     score7 = 2;
-                } else {
+                } else if (r35.isChecked()) {
                     score7 = 1;
                 }
 
@@ -226,7 +226,7 @@ public class UserinfoActivity extends Activity {
                     score8 = 3;
                 } else if (r39.isChecked()) {
                     score8 = 2;
-                } else {
+                } else if (r40.isChecked()) {
                     score8 = 1;
                 }
 
@@ -238,7 +238,7 @@ public class UserinfoActivity extends Activity {
                     score9 = 3;
                 } else if (r44.isChecked()) {
                     score9 = 4;
-                } else {
+                } else if (r45.isChecked()){
                     score9 = 5;
                 }
 
@@ -250,14 +250,14 @@ public class UserinfoActivity extends Activity {
                     score10 = 3;
                 } else if (r49.isChecked()) {
                     score10 = 2;
-                } else {
+                } else if (r50.isChecked()){
                     score10 = 1;
                 }
 
 
                 score = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9 + score10;
 
-                Toast.makeText(getApplicationContext(), "당신의 점수는: " + score + "/35", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "당신의 점수는: " + score + "/50", Toast.LENGTH_LONG).show();
 
 
                 String thescore = String.valueOf(score);
