@@ -112,6 +112,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="금연일지우선여기에"/>
+
+            <Button
+                android:id="@+id/btnMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="메인으로"/>
         </LinearLayout>
 
 

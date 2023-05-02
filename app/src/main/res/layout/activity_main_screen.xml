@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainScreenActivity">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="나의 금연 정보"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/current_quit_info_button"
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        android:text="OO님의 \n금연 단계는?"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/message_box"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/text_border"
+        android:gravity="center"
+        android:text="금연 다짐 메시지"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_quit_info_button" />
+
+    <TextView
+        android:id="@+id/recent_smoking_log_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="최근 흡연 기록"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_box" />
+
+    <TextView
+        android:id="@+id/recent_smoking_log"
+        android:layout_width="310dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="8dp"
+        android:text="1. 샘플 흡연 기록\n2. 샘플 흡연 기록\n3. 샘플 흡연 기록"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recent_smoking_log_title" />
+
+    <ImageButton
+        android:id="@+id/sidebarbutton"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="32dp"
+
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/sidebar"
+        app:layout_constraintBottom_toTopOf="@+id/current_quit_info_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
