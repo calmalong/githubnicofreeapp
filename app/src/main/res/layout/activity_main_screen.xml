@@ -71,8 +71,8 @@
 
     <ImageButton
         android:id="@+id/sidebarbutton"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
+        android:layout_width="48dp"
+        android:layout_height="52dp"
         android:layout_marginEnd="32dp"
 
         android:background="?android:attr/selectableItemBackground"
@@ -80,6 +80,6 @@
         app:layout_constraintBottom_toTopOf="@+id/current_quit_info_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.617" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

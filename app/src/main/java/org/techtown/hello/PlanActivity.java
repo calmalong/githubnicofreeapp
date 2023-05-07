@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 public class PlanActivity extends Activity {
 
-    Button btnDate, btnRecord, btnMain;
+    Button btnDate, btnRecord;
     RadioButton rdoDate;
     DatePicker dPicker;
     TextView startdate;
@@ -59,13 +59,7 @@ public class PlanActivity extends Activity {
 
             }
         });
-        btnMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainScreenActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
 }

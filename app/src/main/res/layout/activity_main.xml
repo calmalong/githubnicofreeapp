@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:background="#F5F5F5">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,14 +13,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <TextView
                 android:id="@+id/Text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:gravity="center"
                 android:text="@string/strTxt1"
                 android:textColor="#28634F"
                 android:textSize="20sp"></TextView>
@@ -28,41 +32,70 @@
                 android:id="@+id/Text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/strTxt2"
                 android:textColor="@color/black"
                 android:textSize="17sp"></TextView>
 
             <RadioGroup
                 android:id="@+id/RGroup1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/R1"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="5분이내" />
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                <RadioButton
-                    android:id="@+id/R2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6-30분사이" />
+                    <RadioButton
+                        android:id="@+id/R1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5분 이내" />
+                </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/R3"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="31-60분사이" />
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                <RadioButton
-                    android:id="@+id/R4"
-                    android:layout_width="wrap_content"
+                    <RadioButton
+                        android:id="@+id/R2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6-30분 사이" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="60분이후" />
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/R3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="31-60분 사이" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/R4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60분 이상" />
+                </LinearLayout>
             </RadioGroup>
+
 
             <TextView
                 android:id="@+id/Text3"
@@ -131,33 +164,61 @@
 
             <RadioGroup
                 android:id="@+id/RGroup4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/R9"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="10개 이하" />
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                <RadioButton
-                    android:id="@+id/R10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11-20개" />
+                    <RadioButton
+                        android:id="@+id/R9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10개 이하" />
+                </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/R11"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="21-30개" />
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                <RadioButton
-                    android:id="@+id/R12"
-                    android:layout_width="wrap_content"
+                    <RadioButton
+                        android:id="@+id/R10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11-20개" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="31개 이상" />
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/R11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21-30개" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/R12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="31개 이상" />
+                </LinearLayout>
             </RadioGroup>
 
             <TextView
@@ -222,11 +283,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="답변완료"/>
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/design_default_color_primary"
+                android:text="답변완료"
+                android:textColor="@color/white" />
 
 
         </LinearLayout>
     </ScrollView>
+
 
 
 </LinearLayout>

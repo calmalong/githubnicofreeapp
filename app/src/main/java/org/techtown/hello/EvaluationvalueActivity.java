@@ -6,6 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.graphics.Typeface;
+import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 
 public class EvaluationvalueActivity extends Activity {
 
@@ -28,7 +34,13 @@ public class EvaluationvalueActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         int score = bundle.getInt("score");
 
-        textFinalScore.setText("당신의 니코틴 의존도는 " + score +"점 입니다.");
+        SpannableStringBuilder spannableText = new SpannableStringBuilder("당신의 니코틴 의존도는 " + score + "점 입니다.");
+
+        int start = spannableText.toString().indexOf(String.valueOf(score));
+        int end = start + String.valueOf(score).length();
+        spannableText.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableText.setSpan(new ForegroundColorSpan(Color.BLUE), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textFinalScore.setText(spannableText);
 
         if (score <=3 ){
             testresult.setText("니코틴 의존도가 낮습니다. 금연 가능성이 큰 시기이므로 흡연에 대한 경각심을 가지는 것이 중요합니다. \n ‘나중에 끊어야지’ 혹은 ’얼마 안 피니까 괜찮아‘ 대신 지금부터 금연합시다!");
