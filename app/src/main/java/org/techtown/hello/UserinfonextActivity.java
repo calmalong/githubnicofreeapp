@@ -46,12 +46,14 @@ public class UserinfonextActivity extends Activity {
 
                 if (numberOfAttempts == 0) {
                     stage = "숙고";
-                } else if (RGroup3.getCheckedRadioButtonId() == -1) {
-                    stage = "준비";
-                } else if (R10.isChecked()) {
-                    stage = "실행";
-                } else if (R11.isChecked()) {
-                    stage = "유지";
+                } else {
+                    if (RGroup3.getCheckedRadioButtonId() == -1) {
+                        stage = "준비";
+                    } else if (R10.isChecked()) {
+                        stage = "실행";
+                    } else if (R11.isChecked()) {
+                        stage = "유지";
+                    }
                 }
 
                 Toast.makeText(getApplicationContext(), stage, Toast.LENGTH_SHORT).show();
@@ -59,14 +61,11 @@ public class UserinfonextActivity extends Activity {
                 Intent intent;
                 if (stage.equals("숙고")) {
                     intent = new Intent(getApplicationContext(), MainScreen2Activity.class);
-                }
-                else if (stage.equals("준비")) {
+                } else if (stage.equals("준비")) {
                     intent = new Intent(getApplicationContext(), PlanActivity.class);
-                }
-                else if (stage.equals("실행")) {
+                } else if (stage.equals("실행")) {
                     intent = new Intent(getApplicationContext(), MainScreenActivity.class);
-                }
-                else {
+                } else {
                     intent = new Intent(getApplicationContext(), MainScreenActivity.class);
                 }
                 startActivity(intent);

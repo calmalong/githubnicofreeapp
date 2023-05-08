@@ -32,6 +32,9 @@
             android:exported="true"
             android:launchMode="singleTask" />
         <activity android:name=".DailyrecordActivity" />
+        <activity android:name=".MainScreenActivity" />
+        <activity android:name=".MainScreen2Activity" />
+        <activity android:name=".ImageScrollActivity" />
     </application>
 
 </manifest>
