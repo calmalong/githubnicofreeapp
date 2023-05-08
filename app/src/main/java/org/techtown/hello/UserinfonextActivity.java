@@ -56,7 +56,19 @@ public class UserinfonextActivity extends Activity {
 
                 Toast.makeText(getApplicationContext(), stage, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), PlanActivity.class);
+                Intent intent;
+                if (stage.equals("숙고")) {
+                    intent = new Intent(getApplicationContext(), MainScreen2Activity.class);
+                }
+                else if (stage.equals("준비")) {
+                    intent = new Intent(getApplicationContext(), PlanActivity.class);
+                }
+                else if (stage.equals("실행")) {
+                    intent = new Intent(getApplicationContext(), MainScreenActivity.class);
+                }
+                else {
+                    intent = new Intent(getApplicationContext(), MainScreenActivity.class);
+                }
                 startActivity(intent);
 
             }

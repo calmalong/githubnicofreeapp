@@ -44,4 +44,7 @@
     <string name="strTxt75">4단계 흡연 유발 요인 피하기 \n(특히 재발의 흔한 원인인 술자리를 피해요.)</string>
     <string name="strTxt76">5단계 금연보조제 활용하기 \n(금연보조제 활용은 성공률을 2배 향상시켜요.)</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>

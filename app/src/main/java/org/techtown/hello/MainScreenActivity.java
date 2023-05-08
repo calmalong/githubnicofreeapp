@@ -1,56 +1,66 @@
 package org.techtown.hello;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-import android.widget.ImageButton;
-import android.widget.PopupMenu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.core.view.GravityCompat;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainScreenActivity extends AppCompatActivity {
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_smoking_diary:
+                        // 흡연 일지 화면으로 이동
+                        break;
+                    case R.id.nav_smoking_plan:
+                        // 금연 계획서 확인 화면으로 이동
+                        break;
+                    case R.id.nav_chatbot_consult:
+                        // 챗봇 상담 화면으로 이동
+                        break;
+                    case R.id.nav_chatbot_info:
+                        // 챗봇 정보 제공 화면으로 이동
+                        break;
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+
+        });
         ImageButton sidebarButton = findViewById(R.id.sidebarbutton);
         sidebarButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(MainScreenActivity.this, v);
-                popupMenu.getMenuInflater().inflate(R.menu.main_menu, popupMenu.getMenu());
-
-                // 팝업 메뉴 아이템 클릭 리스너 설정
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.menu_item_1:
-                                // 페이지 이동 예: 흡연 일지
-                                break;
-                            case R.id.menu_item_2:
-                                // 페이지 이동 예: 금연 통계
-                                break;
-                            case R.id.menu_item_3:
-                                // 페이지 이동 예: 자기 보상
-                                break;
-                            case R.id.menu_item_4:
-                                // 페이지 이동 예: 금연 계획서 확인
-                                break;
-                            case R.id.menu_item_5:
-                                // 페이지 이동 예: 챗봇 도움
-                                break;
-                        }
-                        return true;
-                    }
-                });
-
-                popupMenu.show();
+            public void onClick(View view) {
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
     }
 }
