@@ -43,13 +43,19 @@ public class EvaluationvalueActivity extends Activity {
         textFinalScore.setText(spannableText);
 
         if (score <=3 ){
-            testresult.setText("니코틴 의존도가 낮습니다. 금연 가능성이 큰 시기이므로 흡연에 대한 경각심을 가지는 것이 중요합니다. \n ‘나중에 끊어야지’ 혹은 ’얼마 안 피니까 괜찮아‘ 대신 지금부터 금연합시다!");
+            SpannableStringBuilder spannableText1 =  new SpannableStringBuilder("니코틴 의존도가 낮습니다. 금연 가능성이 큰 시기이므로 흡연에 대한 경각심을 가지는 것이 중요합니다. \n ‘나중에 끊어야지’ 혹은 ’얼마 안 피니까 괜찮아‘ 대신 지금부터 금연합시다!");
+            setBoldSpan(spannableText1,"니코틴 의존도가 낮습니다");
+            testresult.setText(spannableText1);
         } else if (score <=6 ){
-            testresult.setText("니코틴 의존도가 중간입니다. 니코틴 중독으로 인한 증상이 나타나지 않았을 수 있으나, 불시에 심각한 의존도로 번질 수 있습니다. \n 금연 계획과 자기 조절을 통해 금연을 준비합시다!");
+            SpannableStringBuilder spannableText2 = new SpannableStringBuilder("니코틴 의존도가 중간입니다. 니코틴 중독으로 인한 증상이 나타나지 않았을 수 있으나, 불시에 심각한 의존도로 번질 수 있습니다. \n 금연 계획과 자기 조절을 통해 금연을 준비합시다!");
+            setBoldSpan(spannableText2, "니코틴 의존도가 중간입니다");
+            testresult.setText(spannableText2);
         } else {
-            testresult.setText("니코틴 의존도가 높습니다. 현재 신체적, 심리적으로 의존이 생긴 상태이므로, 바로 금연한다면 초조하거나 조바심이 날 수 있습니다. " +
+            SpannableStringBuilder spannableText3 = new SpannableStringBuilder("니코틴 의존도가 높습니다. 현재 신체적, 심리적으로 의존이 생긴 상태이므로, 바로 금연한다면 초조하거나 조바심이 날 수 있습니다. " +
                     "이는 금단증상의 한 양상으로 금연을 지속하기 어렵게 만듭니다.\n 따라서, 단기 금연 계획과 흡연 기록 등을 적으면서 의존 수준을 떨어뜨리고 니코틴 패치나 약물 등 " +
                     "보조 수단을 적절히 사용하는 것을 권장합니다.");
+            setBoldSpan(spannableText3, "니코틴 의존도가 높습니다");
+            testresult.setText(spannableText3);
         }
 
 
@@ -63,5 +69,10 @@ public class EvaluationvalueActivity extends Activity {
             }
         });
 
+    }
+    private void setBoldSpan(SpannableStringBuilder spannableText, String targetText) {
+        int start = spannableText.toString().indexOf(targetText);
+        int end = start + targetText.length();
+        spannableText.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 }
