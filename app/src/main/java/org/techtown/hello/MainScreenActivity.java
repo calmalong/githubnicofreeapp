@@ -1,6 +1,6 @@
 package org.techtown.hello;
 
-import android.content.res.Configuration;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,8 +9,9 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
 
 public class MainScreenActivity extends AppCompatActivity {
@@ -38,9 +39,13 @@ public class MainScreenActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_smoking_diary:
                         // 흡연 일지 화면으로 이동
+                        Intent ViewIntent = new Intent(MainScreenActivity.this, ViewrecordActivity.class);
+                        startActivity(ViewIntent);
                         break;
                     case R.id.nav_smoking_plan:
                         // 금연 계획서 확인 화면으로 이동
+                        Intent planIntent = new Intent(MainScreenActivity.this, PlanActivity.class);
+                        startActivity(planIntent);
                         break;
                     case R.id.nav_chatbot_consult:
                         // 챗봇 상담 화면으로 이동

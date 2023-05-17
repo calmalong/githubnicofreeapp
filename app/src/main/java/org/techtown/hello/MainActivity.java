@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         r16 = (RadioButton) findViewById(R.id.R16);
 
         btnResult = (Button) findViewById(R.id.btnResult);
-        finalScore = (TextView) findViewById(R.id.textFinalScore);
+        //finalScore = (TextView) findViewById(R.id.textFinalScore);
 
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
