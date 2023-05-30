@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -25,9 +26,10 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 public class ViewrecordActivity extends AppCompatActivity {
     RecordAdapter adapter;
+    List<Record> recordList;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewrecord);
 
@@ -45,7 +47,7 @@ public class ViewrecordActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //UpdaterecordAdapter 초기화
+        //RecordAdapter 초기화
         adapter = new RecordAdapter(ViewrecordActivity.this);
 
         //RecyclerView Adapter 설정
@@ -54,39 +56,42 @@ public class ViewrecordActivity extends AppCompatActivity {
         //조회
         loadRecordList();
 
+        // 삭제 제스처
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
             }
-
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
 
                 int position = viewHolder.getBindingAdapterPosition();
-
-                switch (direction) {
+                switch(direction){
                     case ItemTouchHelper.LEFT:
 
+                        //레코드 클래스 생성
                         Record record = new Record();
-                        record.userSituation = recordList.get(position).userSituation;
+                        record.uid = recordList.get(position).uid;
 
+                        // 아이템 삭제
                         adapter.deleteRecord(position);
 
+                        // 아이템 삭제 화면 재정리
                         adapter.notifyItemRemoved(position);
 
+                        // DB
                         AppDatabase db = AppDatabase.getDBInstance(getApplicationContext());
 
-                        db.recordDao().recordDelete(record);
+                        //삭제 쿼리
+                        db.recordDao().deleteRecord(record);
 
                         break;
-
                 }
-
             }
 
+            // 제스처 그림 구현
             @Override
-            public void OnChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+            public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
                 new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                         .addSwipeLeftBackgroundColor(Color.RED)
@@ -101,6 +106,7 @@ public class ViewrecordActivity extends AppCompatActivity {
         }).attachToRecyclerView(recyclerView);
     }
 
+   // 액티비티 백그라운드에 있는데 호출되면 실행
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -126,7 +132,6 @@ public class ViewrecordActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getDBInstance((this.getApplicationContext()));
 
         List<Record> recordList = db.recordDao().getAllRecord();
-
         adapter.setRecordList(recordList);
     }
 }

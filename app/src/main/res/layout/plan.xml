@@ -8,10 +8,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/text1"
                 android:layout_width="match_parent"
@@ -26,14 +28,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/strTxt72"
                     android:textColor="@color/black"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp" />
+
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -47,78 +49,159 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <DatePicker
                         android:id="@+id/dPicker"
                         android:datePickerMode="spinner"
                         android:calendarViewShown="false"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
 
                 </FrameLayout>
+
                 <Button
+                    android:id="@+id/btnRecord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:id="@+id/btnDate"
-                    android:text="선택완료"/>
+                    android:text="선택완료" />
+
             </LinearLayout>
 
             <TextView
+                android:id="@+id/startdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/startdate"
                 android:textSize="15sp"
-                android:hint="선택일"/>
+                android:hint="선택일" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/strTxt73"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/strTxt74"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/strTxt75"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/strTxt73"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/shareText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="금연 계획서를 작성했습니다! 많은 격려 부탁드립니다"
+                        android:textSize="14sp" />
+
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btnCopy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="복사하기" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/strTxt74"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkbox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="네, 확인했어요" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/strTxt75"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkbox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="네, 확인했어요" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="@string/strTxt76"
                     android:textColor="@color/black"
                     android:textSize="17sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkbox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="네, 확인했어요" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnRecord"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnHome"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="금연일지우선여기에"/>
+                android:layout_marginTop="20dp"
+                android:text="홈화면으로" />
+
+
 
         </LinearLayout>
 
-
     </ScrollView>
-
-
-
 
 </LinearLayout>

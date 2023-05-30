@@ -15,7 +15,6 @@ import java.util.List;
 public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHolder> {
 
     List<Record> recordList;
-
     Context context;
 
     public RecordAdapter(Context context) {
@@ -36,8 +35,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
     @Override
     public  void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        int mPosition = holder.getAdapterPosition();
-
+        int mposition = holder.getBindingAdapterPosition();
         holder.situationText.setText(recordList.get(position).userSituation);
         holder.feelingText.setText(recordList.get(position).userFeeling);
 
@@ -45,12 +43,11 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(context, UpdaterecordActivity.class);
-                intent.putExtra("userSituation", recordList.get(mPosition).userSituation);
-                intent.putExtra("userFeeling", recordList.get(mPosition).userFeeling);
+                intent.putExtra("uId", recordList.get(mposition).uid);
+                intent.putExtra("userSituation", recordList.get(mposition).userSituation);
+                intent.putExtra("userFeeling", recordList.get(mposition).userFeeling);
                 context.startActivity(intent);
-
             }
         });
     }
@@ -68,10 +65,9 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
         notifyDataSetChanged();
     }
 
+    // 일지 삭제
     public void deleteRecord(int position) {
-
         this.recordList.remove(position);
-
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {

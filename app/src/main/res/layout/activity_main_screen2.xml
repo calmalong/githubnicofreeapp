@@ -41,15 +41,15 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <Button
-            android:id="@+id/btnGoToReadyStage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="준비 단계로 넘어가기"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLearnMore" />
+    <Button
+        android:id="@+id/btnGoToReadyStage"
+        android:layout_width="235dp"
+        android:layout_height="49dp"
+        android:text="준비 단계로 넘어가기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLearnMore" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,37 +7,37 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DailyrecordActivity extends AppCompatActivity {
 
-    DatePicker dPicker;
-
-    TextView today;
-
-    EditText situation, feeling;
+    EditText today, situation, feeling;
+    Button insertBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dailyrecord);
 
+        today = findViewById(R.id.today);
         situation = findViewById(R.id.situation);
         feeling = findViewById(R.id.feeling);
-        Button insertBtn = findViewById(R.id.btnSave);
+        insertBtn = findViewById(R.id.btnSave);
 
 
 
         insertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String Situation = situation.getText().toString();
                 String Feeling = feeling.getText().toString();
-
-                insertRecord (Situation, Feeling);
 
             }
         });

@@ -18,10 +18,12 @@ public interface RecordDao {
     void insertRecord(Record record);
 
     @Delete
-    void recordDelete(Record record);
+    void deleteRecord(Record record);
 
     @Update
-    void recordUpdate(Record record);
+    void updateRecord(Record record);
+    @Query("SELECT * FROM record WHERE uid = :uid")
+    Record getRecordById(int uid);
 
 
 

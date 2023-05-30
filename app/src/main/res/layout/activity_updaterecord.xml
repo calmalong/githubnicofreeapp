@@ -19,6 +19,7 @@
         android:id="@+id/up_feeling"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/up_situation"
         android:hint="기분"
         android:inputType="text"/>
 
