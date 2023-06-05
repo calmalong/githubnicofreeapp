@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -71,11 +72,23 @@ public class PlanActivity extends Activity {
             }
         });
 
-
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainScreenActivity.class); // 빌드 에러로 임의로 메인화면에 인텐트함 추후 수정
+                int year = dPicker.getYear();
+                int month = dPicker.getMonth() + 1;
+                int dayOfMonth = dPicker.getDayOfMonth();
+
+                String selectedDate = year + "년 " + month + "월 " + dayOfMonth + "일 ";
+                startdate.setText(selectedDate);
+
+                AppDatabase appDatabase = AppDatabase.getDBInstance(PlanActivity.this);
+                HomeEntity entity = new HomeEntity();
+                entity.startdate = selectedDate;
+                insertEntity(entity,appDatabase);
+
+                Intent intent = new Intent(getApplicationContext(), MainScreenActivity.class);
+                intent.putExtra("시작날짜: ", selectedDate);
                 startActivity(intent);
                 finish();
             }
@@ -83,4 +96,12 @@ public class PlanActivity extends Activity {
 
     }
 
+    private void insertEntity(final HomeEntity entity, final AppDatabase appDatabase) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                appDatabase.homeDao().insert(entity);
+            }
+        });
+    }
 }

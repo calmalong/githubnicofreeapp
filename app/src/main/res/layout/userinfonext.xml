@@ -12,7 +12,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/strTxt41"
                 android:textColor="#28634F"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -28,12 +28,12 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt42"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/edtunxt42"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/edtunxt42"
                 android:hint="( )갑 ( )개비" />
 
             <TextView
@@ -42,12 +42,12 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt43"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/edtunxt43"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/edtunxt43"
                 android:hint="( )년 ( )개월" />
 
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt44"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <RadioGroup
                 android:id="@+id/RGroup1"
@@ -95,7 +95,7 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/strTxt45"
                 android:textColor="#28634F"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,12 +103,12 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt46"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/edtunxt46"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/edtunxt46"
                 android:hint="총 ( )회" />
 
             <TextView
@@ -117,7 +117,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt47"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <RadioGroup
                 android:id="@+id/RGroup2"
@@ -162,12 +162,12 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt48"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/edtunxt48"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/edtunxt48"
                 android:hint="금연 실패 이유" />
 
             <TextView
@@ -176,7 +176,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt49"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <RadioGroup
                 android:id="@+id/RGroup3"
@@ -198,14 +198,13 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt50"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <RadioGroup
                 android:id="@+id/RGroup4"
@@ -232,7 +231,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/strTxt51"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <RadioGroup
                 android:id="@+id/RGroup5"
@@ -259,22 +258,21 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/strTxt52"
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/edtunxt51"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/edtunxt51"
                 android:hint="파이팅!" />
 
 
             <Button
+                android:id="@+id/btnAnalyze"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:id="@+id/btnAnalyze"
-                android:text="흡연 정보 작성 완료하기"/>
-
+                android:text="흡연 정보 작성 완료하기" />
 
 
         </LinearLayout>

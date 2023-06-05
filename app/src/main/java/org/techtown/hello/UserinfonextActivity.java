@@ -16,7 +16,7 @@ public class UserinfonextActivity extends Activity {
 
 
     Button btnAnalyze;
-    EditText edtunxt46;
+    EditText edtunxt46, edtunxt51;
     RadioGroup RGroup3;
     RadioButton R10;
     RadioButton R11;
@@ -29,6 +29,7 @@ public class UserinfonextActivity extends Activity {
 
         btnAnalyze = (Button) findViewById(R.id.btnAnalyze);
         edtunxt46 = (EditText) findViewById(R.id.edtunxt46);
+        edtunxt51 = (EditText) findViewById(R.id.edtunxt51);
         RGroup3 = (RadioGroup) findViewById(R.id.RGroup3);
         R10 = (RadioButton) findViewById(R.id.R10);
         R11 = (RadioButton) findViewById(R.id.R11);
@@ -57,6 +58,12 @@ public class UserinfonextActivity extends Activity {
                 }
 
                 Toast.makeText(getApplicationContext(), stage, Toast.LENGTH_SHORT).show();
+
+                // HomeEntity 생성 및 데이터 저장
+                HomeEntity homeEntity = new HomeEntity();
+                homeEntity.stage = stage;
+                homeEntity.msgbox = edtunxt51.getText().toString();
+                AppDatabase.getDBInstance(getApplicationContext()).homeDao().insert(homeEntity);
 
                 Intent intent;
                 if (stage.equals("숙고")) {
