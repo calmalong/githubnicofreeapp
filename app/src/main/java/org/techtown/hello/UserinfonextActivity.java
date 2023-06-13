@@ -15,18 +15,20 @@ import androidx.annotation.Nullable;
 public class UserinfonextActivity extends Activity {
 
 
-    Button btnAnalyze;
+    Button btnRecord, btnAnalyze;
     EditText edtunxt46, edtunxt51;
     RadioGroup RGroup3;
     RadioButton R10;
     RadioButton R11;
 
+    String stage = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userinfonext);
 
+        btnRecord = (Button) findViewById(R.id.btnRecord);
         btnAnalyze = (Button) findViewById(R.id.btnAnalyze);
         edtunxt46 = (EditText) findViewById(R.id.edtunxt46);
         edtunxt51 = (EditText) findViewById(R.id.edtunxt51);
@@ -35,10 +37,9 @@ public class UserinfonextActivity extends Activity {
         R11 = (RadioButton) findViewById(R.id.R11);
 
 
-        btnAnalyze.setOnClickListener(new View.OnClickListener() {
+        btnRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stage = "";
                 String inputText = edtunxt46.getText().toString();
                 int numberOfAttempts = 0;
                 if (!inputText.isEmpty()) {
@@ -57,13 +58,23 @@ public class UserinfonextActivity extends Activity {
                     }
                 }
 
-                Toast.makeText(getApplicationContext(), stage, Toast.LENGTH_SHORT).show();
+                String messageBoxText = edtunxt51.getText().toString();
+                Intent intent = new Intent();
+                intent.putExtra("messageBoxText", messageBoxText);
+                setResult(RESULT_OK, intent);
+
+                Toast.makeText(getApplicationContext(), "성공적으로 저장되었습니다!", Toast.LENGTH_SHORT).show();
 
                 // HomeEntity 생성 및 데이터 저장
                 HomeEntity homeEntity = new HomeEntity();
                 homeEntity.stage = stage;
-                homeEntity.msgbox = edtunxt51.getText().toString();
+                homeEntity.msgbox = messageBoxText;
                 AppDatabase.getDBInstance(getApplicationContext()).homeDao().insert(homeEntity);
+            }
+        });
+        btnAnalyze.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 Intent intent;
                 if (stage.equals("숙고")) {

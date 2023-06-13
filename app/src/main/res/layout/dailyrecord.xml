@@ -12,72 +12,47 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="일자"
-        android:textSize="20sp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="일자"
-        android:id="@+id/today"
-        android:textSize="20sp"
-        android:inputType="text"/>
+        android:text="흡연 일지"
+        android:gravity="center"
+        android:textColor="#28634F"
+        android:textSize="25sp"/>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="흡연 유발 상황"
         android:textSize="20sp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="상황"
+        android:hint="흡연이 생각난 상황을 간단히 적어주세요."
         android:id="@+id/situation"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:inputType="text"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="기분"
         android:textSize="20sp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="기분"
+        android:hint="당시의 기분을 간단히 적어주세요."
         android:id="@+id/feeling"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:inputType="text"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="흡연 여부"
-        android:textSize="20sp"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/RGroup1">
-        <RadioButton
-            android:id="@+id/r1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="O" />
-        <RadioButton
-            android:id="@+id/r2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="X" />
-    </RadioGroup>
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="저장" />
 
 

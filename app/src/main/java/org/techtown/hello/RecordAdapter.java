@@ -55,7 +55,11 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
     @Override
     public int getItemCount() {
 
-        return this.recordList.size();
+        if (recordList == null) {
+            return 0;
+        } else {
+            return this.recordList.size();
+        }
     }
 
     //리스트 저장

@@ -8,6 +8,6 @@ import androidx.room.Query;
 public interface HomeDao {
     @Insert
     void insert(HomeEntity entity);
-    @Query("SELECT * FROM HomeEntity LIMIT 1")
+    @Query("SELECT id, startdate, stage, msgbox FROM HomeEntity LIMIT 1")
     HomeEntity getCurrentStage();
 }

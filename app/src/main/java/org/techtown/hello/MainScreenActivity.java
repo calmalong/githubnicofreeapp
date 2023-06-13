@@ -5,18 +5,21 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
 
 public class MainScreenActivity extends AppCompatActivity {
 
@@ -24,9 +27,11 @@ public class MainScreenActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
-    private EditText edtunxt51;
     private TextView currentStage, currentStage2, messageBox;
     private AppDatabase appDatabase;
+
+    RecordAdapter adapter;
+    private static final int REQUEST_CODE_USER_INFO = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,18 @@ public class MainScreenActivity extends AppCompatActivity {
         messageBox = findViewById(R.id.message_box);
         appDatabase = AppDatabase.getDBInstance(this);
 
-        String selectedDate = getIntent().getStringExtra("시작 날짜: ");
+        RecyclerView recyclerView = findViewById(R.id.recent_smoking_log);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //RecordAdapter 초기화
+        adapter = new RecordAdapter(MainScreenActivity.this);
+
+        //RecyclerView Adapter 설정
+        recyclerView.setAdapter(adapter);
+
+        //조회
+        loadRecentRecordList();
+
+        String selectedDate = getIntent().getStringExtra("startdate");
         String stage = getIntent().getStringExtra("stage");
 
         if (selectedDate != null && !selectedDate.isEmpty()) {
@@ -61,6 +77,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -85,32 +102,33 @@ public class MainScreenActivity extends AppCompatActivity {
                         // 챗봇 정보 제공 화면으로 이동
                         break;
                 }
-                drawerLayout.closeDrawer(GravityCompat.START);
+                drawerLayout.closeDrawer(GravityCompat.END);
                 return true;
             }
 
         });
-        ImageButton sidebarButton = findViewById(R.id.sidebarbutton);
+        ImageButton sidebarButton = findViewById(R.id.btnSidebar);
         sidebarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
+                drawerLayout.openDrawer(GravityCompat.END);
             }
         });
+        updateMessageBox();
     }
 
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         updateMessageBox();
     }
 
-    private void updateMessageBox(){
+    private void updateMessageBox() {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
                 HomeEntity entity = appDatabase.homeDao().getCurrentStage();
                 if (entity != null) {
-                    String message = entity.msgbox;
+                    final String message = entity.msgbox;
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -121,6 +139,7 @@ public class MainScreenActivity extends AppCompatActivity {
             }
         });
     }
+
     private void getCurrentStageFromDatabase() {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -155,5 +174,22 @@ public class MainScreenActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_USER_INFO && resultCode == RESULT_OK) {
+            String messageBoxText = data.getStringExtra("messageBoxText");
+            if (messageBoxText != null) {
+                messageBox.setText(messageBoxText);
+            }
+        }
+    }
+
+    private void loadRecentRecordList() {
+        AppDatabase db = AppDatabase.getDBInstance(this.getApplicationContext());
+        List<Record> recentRecordList = db.recordDao().getRecentRecords(3);
+        adapter.setRecordList(recentRecordList); // 어뎁터에 최근 레코드 리스트 설정
     }
 }

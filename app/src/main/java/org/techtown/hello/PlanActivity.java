@@ -15,6 +15,11 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
 public class PlanActivity extends Activity {
 
     Button btnRecord, btnHome, btnCopy;
@@ -80,17 +85,11 @@ public class PlanActivity extends Activity {
                 int dayOfMonth = dPicker.getDayOfMonth();
 
                 String selectedDate = year + "년 " + month + "월 " + dayOfMonth + "일 ";
-                startdate.setText(selectedDate);
 
                 AppDatabase appDatabase = AppDatabase.getDBInstance(PlanActivity.this);
                 HomeEntity entity = new HomeEntity();
                 entity.startdate = selectedDate;
-                insertEntity(entity,appDatabase);
-
-                Intent intent = new Intent(getApplicationContext(), MainScreenActivity.class);
-                intent.putExtra("시작날짜: ", selectedDate);
-                startActivity(intent);
-                finish();
+                insertEntity(entity, appDatabase);
             }
         });
 
@@ -101,7 +100,38 @@ public class PlanActivity extends Activity {
             @Override
             public void run() {
                 appDatabase.homeDao().insert(entity);
+
+                String dDay = calculateDDay(entity.startdate);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(getApplicationContext(), MainScreenActivity.class);
+                        intent.putExtra("dDay", dDay);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
             }
         });
+    }
+
+    private String calculateDDay(String startDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault());
+        try {
+            Date startDateFormatted = sdf.parse(startDate);
+            Date currentDate = new Date();
+
+            long diffInMillies = Math.abs(currentDate.getTime() - startDateFormatted.getTime());
+            long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+
+            if (currentDate.after(startDateFormatted)) {
+                return "D+" + diff;
+            } else {
+                return "D-" + diff;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

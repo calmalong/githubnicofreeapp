@@ -26,7 +26,6 @@ public class DailyrecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dailyrecord);
 
-        today = findViewById(R.id.today);
         situation = findViewById(R.id.situation);
         feeling = findViewById(R.id.feeling);
         insertBtn = findViewById(R.id.btnSave);
@@ -38,6 +37,8 @@ public class DailyrecordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String Situation = situation.getText().toString();
                 String Feeling = feeling.getText().toString();
+
+                insertRecord(Situation, Feeling);
 
             }
         });

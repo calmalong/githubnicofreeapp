@@ -268,11 +268,18 @@
 
 
             <Button
+                android:id="@+id/btnRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="흡연 정보 저장하기" />
+
+            <Button
                 android:id="@+id/btnAnalyze"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="흡연 정보 작성 완료하기" />
+                android:text="다음으로 넘어가기"/>
 
 
         </LinearLayout>

@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -32,6 +33,17 @@ public class ViewrecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewrecord);
+
+        ImageButton backButton = findViewById(R.id.btnBack);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewrecordActivity.this, MainScreenActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         FloatingActionButton fab = findViewById(R.id.btnAddrecord);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +143,7 @@ public class ViewrecordActivity extends AppCompatActivity {
     private void loadRecordList() {
         AppDatabase db = AppDatabase.getDBInstance((this.getApplicationContext()));
 
-        List<Record> recordList = db.recordDao().getAllRecord();
+        recordList = db.recordDao().getAllRecord();
         adapter.setRecordList(recordList);
     }
 }

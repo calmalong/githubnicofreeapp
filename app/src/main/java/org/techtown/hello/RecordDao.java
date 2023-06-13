@@ -25,6 +25,6 @@ public interface RecordDao {
     @Query("SELECT * FROM record WHERE uid = :uid")
     Record getRecordById(int uid);
 
-
-
+    @Query("SELECT * FROM record LIMIT :count")
+    List<Record> getRecentRecords(int count);
 }

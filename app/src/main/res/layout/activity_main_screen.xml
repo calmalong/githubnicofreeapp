@@ -8,7 +8,11 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="end">
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainScreenActivity">
@@ -30,13 +34,13 @@
         android:id="@+id/current_stage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="20dp"
         android:hint="현재 (단계)중입니다!"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/current_stage" />
 
     <TextView
         android:id="@+id/current_stage"
@@ -53,7 +57,7 @@
         android:id="@+id/message_box"
         android:layout_width="360dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/text_border"
         android:gravity="center"
         android:hint="금연 다짐 메시지"
@@ -61,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_stage" />
+        app:layout_constraintTop_toBottomOf="@+id/current_stage2" />
 
     <TextView
         android:id="@+id/recent_smoking_log_title"
@@ -76,19 +80,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/message_box" />
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recent_smoking_log"
         android:layout_width="310dp"
         android:layout_height="180dp"
         android:layout_marginTop="8dp"
-        android:text="1. 샘플 흡연 기록\n2. 샘플 흡연 기록\n3. 샘플 흡연 기록"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recent_smoking_log_title" />
 
+
     <ImageButton
-        android:id="@+id/sidebarbutton"
+        android:id="@+id/btnSidebar"
         android:layout_width="48dp"
         android:layout_height="52dp"
         android:layout_marginEnd="32dp"
@@ -100,7 +103,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.617" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
