@@ -97,6 +97,8 @@ public class MainScreenActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_chatbot_consult:
                         // 챗봇 상담 화면으로 이동
+                        Intent chatbotIntent = new Intent(MainScreenActivity.this, ChatbotActivity.class);
+                        startActivity(chatbotIntent);
                         break;
                     case R.id.nav_chatbot_info:
                         // 챗봇 정보 제공 화면으로 이동

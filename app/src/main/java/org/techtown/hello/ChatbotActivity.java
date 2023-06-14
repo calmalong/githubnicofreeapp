@@ -83,7 +83,7 @@ public class ChatbotActivity extends AppCompatActivity {
 
     void callAPI(String question){
         //okhttp
-        messageList.add(new Message("Typing... ",Message.SENT_BY_BOT));
+        messageList.add(new Message("답변을 입력하고 있어요... ",Message.SENT_BY_BOT));
 
         JSONObject jsonBody = new JSONObject();
         try {
