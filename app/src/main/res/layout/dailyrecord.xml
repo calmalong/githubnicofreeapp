@@ -26,7 +26,7 @@
         android:textSize="20sp"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="흡연이 생각난 상황을 간단히 적어주세요."
         android:id="@+id/situation"
         android:textSize="16sp"
@@ -40,7 +40,7 @@
         android:textSize="20sp"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="당시의 기분을 간단히 적어주세요."
         android:id="@+id/feeling"
         android:textSize="16sp"
