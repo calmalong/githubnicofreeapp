@@ -36,6 +36,7 @@
         <activity android:name=".MainScreenActivity" />
         <activity android:name=".MainScreen2Activity" />
         <activity android:name=".ImageScrollActivity" />
+        <activity android:name=".ChatbotActivity" />
     </application>
 
 </manifest>
