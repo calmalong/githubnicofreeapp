@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportSmokinginfo">
+
+    <TextView
+        android:id="@+id/smoking_title"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:text="사용자 흡연 정보 리포트"
+        android:textSize="25sp"
+        android:textColor="#28634F"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userscore"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="120dp"
+        android:hint="당신의 흡연 정보 점수는 N점 입니다."
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/userscore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/weeklysmoke"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="평소 일주일 흡연량 "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/periodsmoke"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="흡연 기간 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/weeklysmoke" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="주 흡연시간대 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/periodsmoke" />
+
+        <TextView
+            android:id="@+id/numberquit"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="금연 시도 횟수 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/weeklysmoke" />
+
+        <TextView
+            android:id="@+id/adaptmethod"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="채택한 금연 방법 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/numberquit" />
+
+        <TextView
+            android:id="@+id/failreason"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="금연 실패 이유 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/adaptmethod" />
+
+        <TextView
+            android:id="@+id/continuing_period"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="금연 지속기간 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/failreason" />
+
+        <TextView
+            android:id="@+id/sideeffect_YN"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="신체적, 심리적 금단 증상 여부 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/continuing_period" />
+
+        <TextView
+            android:id="@+id/notice_YN"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="주변의 금연 권장 및 금연 소식 인지 여부 "
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/sideeffect_YN" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

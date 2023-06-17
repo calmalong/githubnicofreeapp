@@ -85,6 +85,16 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.nav_smoking_evaluation:
+                        // 기본 흡연 평가 화면으로 이동
+                        Intent EvalIntent = new Intent(MainScreenActivity.this, UserinfoActivity.class);
+                        startActivity(EvalIntent);
+                        break;
+                    case R.id.nav_smoking_report:
+                        // 사용자 흡연 정보 화면으로 이동
+                        Intent ReportIntent = new Intent(MainScreenActivity.this, ReportSmokinginfo.class);
+                        startActivity(ReportIntent);
+                        break;
                     case R.id.nav_smoking_diary:
                         // 흡연 일지 화면으로 이동
                         Intent ViewIntent = new Intent(MainScreenActivity.this, ViewrecordActivity.class);
@@ -99,9 +109,6 @@ public class MainScreenActivity extends AppCompatActivity {
                         // 챗봇 상담 화면으로 이동
                         Intent chatbotIntent = new Intent(MainScreenActivity.this, ChatbotActivity.class);
                         startActivity(chatbotIntent);
-                        break;
-                    case R.id.nav_chatbot_info:
-                        // 챗봇 정보 제공 화면으로 이동
                         break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.END);
