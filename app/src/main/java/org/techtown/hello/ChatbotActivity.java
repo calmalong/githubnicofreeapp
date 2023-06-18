@@ -101,7 +101,7 @@ public class ChatbotActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer sk-<<개인api키>>") //api연결
+                .header("Authorization","Bearer 개인키자리") //api연결
                 .post(body)
                 .build();
 

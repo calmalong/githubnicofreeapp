@@ -38,7 +38,6 @@ public class MainScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        currentStage = findViewById(R.id.current_stage);
         currentStage2 = findViewById(R.id.current_stage2);
         messageBox = findViewById(R.id.message_box);
         appDatabase = AppDatabase.getDBInstance(this);
@@ -89,11 +88,6 @@ public class MainScreenActivity extends AppCompatActivity {
                         // 기본 흡연 평가 화면으로 이동
                         Intent EvalIntent = new Intent(MainScreenActivity.this, UserinfoActivity.class);
                         startActivity(EvalIntent);
-                        break;
-                    case R.id.nav_smoking_report:
-                        // 사용자 흡연 정보 화면으로 이동
-                        Intent ReportIntent = new Intent(MainScreenActivity.this, ReportSmokinginfo.class);
-                        startActivity(ReportIntent);
                         break;
                     case R.id.nav_smoking_diary:
                         // 흡연 일지 화면으로 이동

@@ -25,49 +25,38 @@
         android:layout_marginTop="24dp"
         android:text="나의 금연 정보"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/current_stage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="현재 (단계)중입니다!"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/current_stage" />
+        <TextView
+            android:id="@+id/current_stage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:hint="현재 (단계)중입니다!"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/current_stage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:hint="D-NN"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        <TextView
+            android:id="@+id/message_box"
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/text_border"
+            android:gravity="center"
+            android:hint="금연 다짐 메시지"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.372"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title" />
 
-    <TextView
-        android:id="@+id/message_box"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/text_border"
-        android:gravity="center"
-        android:hint="금연 다짐 메시지"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_stage2" />
-
-    <TextView
+        <TextView
         android:id="@+id/recent_smoking_log_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,18 +79,17 @@
         app:layout_constraintTop_toBottomOf="@+id/recent_smoking_log_title" />
 
 
-    <ImageButton
-        android:id="@+id/btnSidebar"
-        android:layout_width="48dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="32dp"
+        <ImageButton
+            android:id="@+id/btnSidebar"
+            android:layout_width="48dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="48dp"
 
-        android:background="?android:attr/selectableItemBackground"
-        android:src="@drawable/menu_icon"
-        app:layout_constraintBottom_toTopOf="@+id/current_stage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+            android:layout_marginEnd="32dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/menu_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
