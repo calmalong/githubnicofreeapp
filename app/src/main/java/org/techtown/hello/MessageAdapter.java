@@ -21,6 +21,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // 채팅 아이템 레이아웃을 inflate, ViewHolder 생성
         View chatView = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item,null);
         MyViewHolder myViewHolder = new MyViewHolder(chatView);
         return myViewHolder;
@@ -28,8 +29,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+       // 메시지 데이터를 ViewHolder에 바인딩
         Message message = messageList.get(position);
-//        사용자 발화 시 챗봇 창 숨김, 챗봇 발화 시 사용자 창 숨김
+      // 사용자 발화 시 챗봇 창 숨김, 챗봇 발화 시 사용자 창 숨김
         if(message.getSentBy().equals(Message.SENT_BY_ME)){
             holder.leftChatView.setVisibility(View.GONE);
             holder.rightChatView.setVisibility(View.VISIBLE);
@@ -52,6 +54,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            // 채팅 아이템 뷰의 요소를 찾아 ViewHolder에 연결
             leftChatView  = itemView.findViewById(R.id.left_chat_view);
             rightChatView = itemView.findViewById(R.id.right_chat_view);
             leftTextView = itemView.findViewById(R.id.left_chat_text_view);

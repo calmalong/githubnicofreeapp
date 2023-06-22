@@ -36,6 +36,7 @@ public class ViewrecordActivity extends AppCompatActivity {
 
         ImageButton backButton = findViewById(R.id.btnBack);
 
+        // 뒤로 가기 클릭시 메인화면으로 이동
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +50,7 @@ public class ViewrecordActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // 추가하기 버튼을 클릭시 일지로 이동
                 Intent intent = new Intent(ViewrecordActivity.this, DailyrecordActivity.class);
                 activityResult.launch(intent);
             }
@@ -133,7 +134,7 @@ public class ViewrecordActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
 
                     if(result.getResultCode() == RESULT_OK) {
-
+                        // 데이터 갱신
                         loadRecordList();
                     }
                 }
@@ -141,9 +142,11 @@ public class ViewrecordActivity extends AppCompatActivity {
     );
 
     private void loadRecordList() {
+        // 데이터베이스에서 레코드 목록 조회
         AppDatabase db = AppDatabase.getDBInstance((this.getApplicationContext()));
 
         recordList = db.recordDao().getAllRecord();
+        // 어댑터에 레코드 목록 설정
         adapter.setRecordList(recordList);
     }
 }

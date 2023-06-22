@@ -57,6 +57,7 @@ public class MainScreen2Activity extends AppCompatActivity {
             }
         });
 
+        // 준비 단계로 넘어가기 클릭시 PlanActivity로 이동
         btnGoToReadyStage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,14 +66,18 @@ public class MainScreen2Activity extends AppCompatActivity {
             }
         });
 
+        // Navagation Drawer 설정
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
+        // ActionBarDrawerToggle 설정
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        // NavigationView의 메뉴 아이템 클릭시 해당 화면으로 이동
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -103,6 +108,8 @@ public class MainScreen2Activity extends AppCompatActivity {
             }
 
         });
+
+        // 사이드바 버튼 클릭시, Navigation Drawer 열기
         ImageButton sidebarButton = findViewById(R.id.btnSidebar);
         sidebarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +119,8 @@ public class MainScreen2Activity extends AppCompatActivity {
         });
 
     }
+
+    // 최근 기록 조회 메서드
     private void loadRecentRecordList() {
         AppDatabase db = AppDatabase.getDBInstance(this.getApplicationContext());
         List<Record> recentRecordList = db.recordDao().getRecentRecords(3);

@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHolder> {
 
-    List<Record> recordList;
+    List<Record> recordList; // 레코트 데이터 보관 리스트
     Context context;
 
     public RecordAdapter(Context context) {
@@ -24,7 +24,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder (@NonNull ViewGroup parent, int viewType) {
-
+        // 각 아이템의 레이아웃을 인플레이션해서 ViewHolder 생성
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         View view = inflater.inflate(R.layout.list_item, parent, false);
@@ -36,17 +36,19 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
     public  void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         int mposition = holder.getBindingAdapterPosition();
+        // 상황과 기분 텍스트뷰에 값 설정
         holder.situationText.setText(recordList.get(position).userSituation);
         holder.feelingText.setText(recordList.get(position).userFeeling);
 
-        //수정화면으로 이동
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // updateRecordActivity를 시작하기 위한 인텐트 생성
                 Intent intent = new Intent(context, UpdaterecordActivity.class);
                 intent.putExtra("uId", recordList.get(mposition).uid);
                 intent.putExtra("userSituation", recordList.get(mposition).userSituation);
                 intent.putExtra("userFeeling", recordList.get(mposition).userFeeling);
+                // 인텐트를 사용하여 액티비티 시작
                 context.startActivity(intent);
             }
         });
@@ -62,7 +64,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.MyViewHold
         }
     }
 
-    //리스트 저장
+    // 리스트 데이터 설정
     public void setRecordList(List<Record> recordList) {
 
         this.recordList = recordList;

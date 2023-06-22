@@ -31,7 +31,7 @@ public class DailyrecordActivity extends AppCompatActivity {
         insertBtn = findViewById(R.id.btnSave);
 
 
-
+        // 저장 버튼 클릭시 이벤트 처리
         insertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,12 +44,15 @@ public class DailyrecordActivity extends AppCompatActivity {
         });
     }
 
+    // 기록 저장 메서드
     private void insertRecord (String situation, String feeling) {
 
+        // 입력된 상황과 감정을 Record 객체에 저장
         Record record = new Record();
         record.userSituation = situation;
         record.userFeeling = feeling;
 
+        // AppDatabase 인스턴스 생성 및 Record 객체 DB에 삽입
         AppDatabase db = AppDatabase.getDBInstance(this.getApplicationContext());
         db.recordDao().insertRecord(record);
 

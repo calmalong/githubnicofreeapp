@@ -25,15 +25,16 @@ public class EvaluationvalueActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.evaluation_result);
 
-
-        textFinalScore = (TextView) findViewById(R.id.textFinalScore);
+        // 뷰 요소 초기화
+       textFinalScore = (TextView) findViewById(R.id.textFinalScore);
         testresult = (TextView) findViewById(R.id.testresult);
         btnGather = (Button) findViewById(R.id.btnGather);
 
-
+        // 전달받은 점수 가져오기
         Bundle bundle = getIntent().getExtras();
         int score = bundle.getInt("score");
 
+        // 점수에 대한 서식 지정 및 텍스트뷰에 설정
         SpannableStringBuilder spannableText = new SpannableStringBuilder("당신의 니코틴 의존도는 " + score + "점 입니다.");
 
         int start = spannableText.toString().indexOf(String.valueOf(score));
@@ -42,6 +43,7 @@ public class EvaluationvalueActivity extends Activity {
         spannableText.setSpan(new ForegroundColorSpan(Color.BLUE), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         textFinalScore.setText(spannableText);
 
+        // 점수에 따른 테스트 결과 설정
         if (score <=3 ){
             SpannableStringBuilder spannableText1 =  new SpannableStringBuilder("니코틴 의존도가 낮습니다. 금연 가능성이 큰 시기이므로 흡연에 대한 경각심을 가지는 것이 중요합니다. \n ‘나중에 끊어야지’ 혹은 ’얼마 안 피니까 괜찮아‘ 대신 지금부터 금연합시다!");
             setBoldSpan(spannableText1,"니코틴 의존도가 낮습니다");
@@ -60,6 +62,7 @@ public class EvaluationvalueActivity extends Activity {
 
 
 
+        // 정보 수집 버튼 클릭시 UserinfoActivity로 이동
         btnGather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +73,7 @@ public class EvaluationvalueActivity extends Activity {
         });
 
     }
+    // 텍스트에 스타일 적용
     private void setBoldSpan(SpannableStringBuilder spannableText, String targetText) {
         int start = spannableText.toString().indexOf(targetText);
         int end = start + targetText.length();

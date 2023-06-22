@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    // 변수 선언
     TextView text1, text2, text3, text4, text5, text6, text7, finalScore;
     RadioGroup rGroup1, rGroup2, rGroup3, rGroup4, rGroup5, rGroup6;
     RadioButton r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         text1 = (TextView) findViewById(R.id.Text1);
-
         text2 = (TextView) findViewById(R.id.Text2);
         rGroup1 = (RadioGroup) findViewById(R.id.RGroup1);
         r1 = (RadioButton) findViewById(R.id.R1);
@@ -69,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
         btnResult = (Button) findViewById(R.id.btnResult);
         //finalScore = (TextView) findViewById(R.id.textFinalScore);
 
+        // 결과 버튼에 클릭 리스너 설정
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // 각 라디오 버튼의 선택에 따라 점수 계산
                 Intent intent = new Intent(getApplicationContext(), EvaluationvalueActivity.class);
                 if (r1.isChecked()) {
                     score1 = 3;
@@ -120,9 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
                 score = score1 + score2 + score3 + score4 + score5 + score6;
 
-
-
-                Intent myIntent = new Intent(MainActivity.this, EvaluationvalueActivity.class);
+                // EvaluationvalueActivity로 점수전달하여 화면전환
+               Intent myIntent = new Intent(MainActivity.this, EvaluationvalueActivity.class);
                 myIntent.putExtra("score", score);
 
                 startActivity(intent);

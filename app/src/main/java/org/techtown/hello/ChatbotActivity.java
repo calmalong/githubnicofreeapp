@@ -53,7 +53,7 @@ public class ChatbotActivity extends AppCompatActivity {
         messageEditText = findViewById(R.id.message_edit_text);
         sendButton = findViewById(R.id.send_btn);
 
-        //setup recycler view
+        //recycler view 설정
         messageAdapter = new MessageAdapter(messageList);
         recyclerView.setAdapter(messageAdapter);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -69,6 +69,7 @@ public class ChatbotActivity extends AppCompatActivity {
         });
     }
 
+    // 채팅에 메시지 추가
     void addToChat(String message,String sentBy){
         runOnUiThread(new Runnable() {
             @Override
@@ -80,20 +81,22 @@ public class ChatbotActivity extends AppCompatActivity {
         });
     }
 
+    // 답변을 채팅에 추가
     void addResponse(String response){
         messageList.remove(messageList.size()-1);
         addToChat(response,Message.SENT_BY_BOT);
     }
 
+    // API 호출
     void callAPI(String question){
-        //okhttp
+        //okhttpClient를 사용하여 API 호출
         messageList.add(new Message("답변을 입력하고 있어요... ",Message.SENT_BY_BOT));
 
         JSONObject jsonBody = new JSONObject();
         try {
             jsonBody.put("model","text-davinci-003");
             jsonBody.put("prompt",question);
-            jsonBody.put("max_tokens",4000);
+            jsonBody.put("max_tokens",2000);
             jsonBody.put("temperature",0);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -101,7 +104,7 @@ public class ChatbotActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer 개인키자리") //api연결
+                .header("Authorization","Bearer sk-<개인키자리>") //api연결
                 .post(body)
                 .build();
 

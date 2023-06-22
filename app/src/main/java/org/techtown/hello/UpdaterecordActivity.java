@@ -38,17 +38,21 @@ public class UpdaterecordActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // edittext에서 사용자 입력 값 가져오기
                 String userSituation = upSituationEdit.getText().toString();
                 String userFeeling = upFeelingEdit.getText().toString();
 
+                // 업데이트할 레코드 객체 생성 및 값 설정
                 Record record = new Record();
                 record.uid = uId;
                 record.userSituation = userSituation;
                 record.userFeeling = userFeeling;
 
+                // 데이터베이스 인스턴스 가져오기
                 AppDatabase db = AppDatabase.getDBInstance(UpdaterecordActivity.this);
                 db.recordDao().updateRecord(record);
 
+                // ViewrecordActivity로 이동하는 인텐트 생성 및 시작
                 Intent intent = new Intent(UpdaterecordActivity.this, ViewrecordActivity.class);
                 startActivity(intent);
                 finish();

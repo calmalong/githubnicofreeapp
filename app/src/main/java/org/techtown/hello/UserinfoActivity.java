@@ -36,6 +36,7 @@ public class UserinfoActivity extends Activity {
 
     int score10 = 0;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,13 +128,14 @@ public class UserinfoActivity extends Activity {
 
         btnNextpage = (Button) findViewById(R.id.btnNextpage);
 
-
+        // 다음 페이지로 버튼을 클릭했을 때 동작함
         btnNextpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), UserinfonextActivity.class);
 
+                // 각 버튼 상태에 따라 해당하는 점수를 설정
                 if (r1.isChecked()) {
                     score1 = 1;
                 } else if (r2.isChecked()){
@@ -255,11 +257,13 @@ public class UserinfoActivity extends Activity {
                 }
 
 
+                // 전체 점수 계산
                 score = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9 + score10;
 
                 Toast.makeText(getApplicationContext(), "당신의 점수는: " + score + "/50", Toast.LENGTH_LONG).show();
 
 
+                // 점수를 UserinfonextActivity 전달하기 위해 인텐트에 추가
                 String thescore = String.valueOf(score);
                 Intent myIntent = new Intent(UserinfoActivity.this, UserinfonextActivity.class);
                 myIntent.putExtra("score", thescore);

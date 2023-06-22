@@ -37,6 +37,7 @@ public class UserinfonextActivity extends Activity {
         R11 = (RadioButton) findViewById(R.id.R11);
 
 
+        // 저장하기 버튼 클릭시 동작
         btnRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +47,7 @@ public class UserinfonextActivity extends Activity {
                     numberOfAttempts = Integer.parseInt(inputText);
                 }
 
+                // 시도 횟수에 따라 해당하는 단계 (stage)를 설정합니다.
                 if (numberOfAttempts == 0) {
                     stage = "숙고";
                 } else {
@@ -72,6 +74,8 @@ public class UserinfonextActivity extends Activity {
                 AppDatabase.getDBInstance(getApplicationContext()).homeDao().insert(homeEntity);
             }
         });
+
+        // 분석하기 버튼 클릭시 동작
         btnAnalyze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

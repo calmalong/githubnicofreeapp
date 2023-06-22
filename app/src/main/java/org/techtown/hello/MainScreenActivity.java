@@ -42,6 +42,7 @@ public class MainScreenActivity extends AppCompatActivity {
         messageBox = findViewById(R.id.message_box);
         appDatabase = AppDatabase.getDBInstance(this);
 
+        // RecyclerView 설정
         RecyclerView recyclerView = findViewById(R.id.recent_smoking_log);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //RecordAdapter 초기화
@@ -50,18 +51,16 @@ public class MainScreenActivity extends AppCompatActivity {
         //RecyclerView Adapter 설정
         recyclerView.setAdapter(adapter);
 
-        //조회
+        // 최근 기록 조회
         loadRecentRecordList();
 
+        // 인텐트에서 전달받은 데이터 출력
         String selectedDate = getIntent().getStringExtra("startdate");
         String stage = getIntent().getStringExtra("stage");
 
         if (selectedDate != null && !selectedDate.isEmpty()) {
             // 선택된 날짜를 가져와서 출력
             currentStage.setText(selectedDate);
-        } else {
-            // 데이터베이스에서 날짜 가져와서 출력
-            getCurrentStageFromDatabase();
         }
 
         if (stage != null && !stage.isEmpty()) {
@@ -70,16 +69,18 @@ public class MainScreenActivity extends AppCompatActivity {
             getCurrentStage2FromDatabase();
         }
 
-
+        // Navigation Drawer 설정
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
+        // ActionBarDrawerToggle 설정
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        // NavigationView의 메뉴 아이템 클릭 시, 해당 화면으로 이동
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -110,6 +111,7 @@ public class MainScreenActivity extends AppCompatActivity {
             }
 
         });
+        // 사이드바 버튼 클릭 시, Navigation Drawer 열기
         ImageButton sidebarButton = findViewById(R.id.btnSidebar);
         sidebarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +119,7 @@ public class MainScreenActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.END);
             }
         });
+        // 메시지 박스 업데이트
         updateMessageBox();
     }
 
@@ -125,6 +128,7 @@ public class MainScreenActivity extends AppCompatActivity {
         updateMessageBox();
     }
 
+    // 메시지 박스 업데이트 기능
     private void updateMessageBox() {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -143,24 +147,8 @@ public class MainScreenActivity extends AppCompatActivity {
         });
     }
 
-    private void getCurrentStageFromDatabase() {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                HomeEntity entity = appDatabase.homeDao().getCurrentStage();
-                if (entity != null) {
-                    String startDate = entity.startdate;
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            currentStage.setText(startDate);
-                        }
-                    });
-                }
-            }
-        });
-    }
 
+    // 데이터베이스에서 현재 단계 가져오기
     private void getCurrentStage2FromDatabase() {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -179,6 +167,7 @@ public class MainScreenActivity extends AppCompatActivity {
         });
     }
 
+    // 결과 처리
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -190,6 +179,7 @@ public class MainScreenActivity extends AppCompatActivity {
         }
     }
 
+    // 최근 기록 조회
     private void loadRecentRecordList() {
         AppDatabase db = AppDatabase.getDBInstance(this.getApplicationContext());
         List<Record> recentRecordList = db.recordDao().getRecentRecords(3);
